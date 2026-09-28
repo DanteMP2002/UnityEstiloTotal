@@ -110,7 +110,7 @@ tarjetasServicio.forEach(tarjeta => observadorTarjetas.observe(tarjeta));
 
 // ==========================================
 // 🔝 BOTÓN "VOLVER ARRIBA"
-// Aparece al bajar 400px y lleva al inicio al hacer clic
+// Aparece al bajar 375px y lleva al inicio al hacer clic
 // ==========================================
 
 const btnArriba = document.createElement('button');
@@ -121,11 +121,34 @@ document.body.appendChild(btnArriba);
 
 window.addEventListener('scroll', () => {
     // Muestra el botón solo si el usuario bajó suficiente
-    btnArriba.classList.toggle('visible', window.scrollY > 350);
+    btnArriba.classList.toggle('visible', window.scrollY > 375);
 }, { passive: true });
 
 btnArriba.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+// ==========================================
+// 📢 BOTÓN FLOTANTE "EVENTOS Y PROMOCIONES"
+// Abre el modal de eventos manualmente al hacer clic
+// ==========================================
+
+const btnAbrirModal = document.createElement('button');
+btnAbrirModal.classList.add('btn-abrir-modal-eventos');
+btnAbrirModal.setAttribute('aria-label', 'Ver eventos y promociones');
+btnAbrirModal.setAttribute('title', 'Ver eventos y promociones');
+btnAbrirModal.innerHTML = '<i class="bi bi-megaphone-fill"></i>';
+document.body.appendChild(btnAbrirModal);
+
+// Sincronizar visibilidad con el scroll (igual que btnArriba)
+window.addEventListener('scroll', () => {
+    btnAbrirModal.classList.toggle('visible', window.scrollY > 350);
+}, { passive: true });
+
+// Al hacer clic, abre el modal de eventos (forzando apertura)
+btnAbrirModal.addEventListener('click', () => {
+    iniciarModalEventos(true);
 });
 
 
@@ -441,16 +464,19 @@ function registrarEventListenersModal() {
 }
 
 /**
- * Inicializa el modal de eventos stories-style al cargar la página
+ * Inicializa el modal de eventos stories-style al cargar la página o al forzar apertura
+ * @param {boolean} [forzar=false] - Si es true, ignora sessionStorage y abre el modal
  */
-function iniciarModalEventos() {
-    // Si ya fue visto en esta sesión, no hacer nada
-    try {
-        if (sessionStorage.getItem(SESSION_KEY)) {
-            return;
+function iniciarModalEventos(forzar = false) {
+    // Si ya fue visto en esta sesión y no se fuerza explícitamente, no hacer nada
+    if (forzar !== true) {
+        try {
+            if (sessionStorage.getItem(SESSION_KEY)) {
+                return;
+            }
+        } catch (e) {
+            console.warn('No se pudo acceder a sessionStorage:', e);
         }
-    } catch (e) {
-        console.warn('No se pudo acceder a sessionStorage:', e);
     }
 
     const overlay = document.querySelector('.modal-ev-overlay');
@@ -484,6 +510,7 @@ document.addEventListener('DOMContentLoaded', iniciarModalEventos);
 // Exposición pública opcional para depuración o llamadas externas
 window.UnityModalEventos = {
     iniciar: iniciarModalEventos,
+    abrir: () => iniciarModalEventos(true),
     cerrar: cerrarModal,
     mostrarSlide,
     avanzarSlide,

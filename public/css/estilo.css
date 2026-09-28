@@ -1379,6 +1379,44 @@ body {
 }
 
 /* ==========================================
+   📢 BOTÓN FLOTANTE ABRIR MODAL EVENTOS
+   ========================================== */
+.btn-abrir-modal-eventos {
+    position: fixed;
+    bottom: 86px; /* Ubicado arriba de .btn-arriba con espacio adecuado (10px gap) */
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.25s ease;
+    z-index: 200;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-abrir-modal-eventos.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.btn-abrir-modal-eventos:hover {
+    background-color: var(--blanco-roto);
+    color: var(--negro);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
    📱 RESPONSIVE MENÚ HAMBURGUESA (móvil)
    ========================================== */
 @media (max-width: 768px) {
@@ -1681,9 +1719,9 @@ body.modal-ev-abierto {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: none;
     align-items: center;
     justify-content: center;
@@ -1715,7 +1753,7 @@ body.modal-ev-abierto {
     max-height: 90vh;
     border-radius: 16px;
     overflow: hidden;
-    background: #00000033;
+    background: rgba(255, 191, 0, 0.2);
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85),
                 0 0 0 1px rgba(201, 168, 76, 0.25);
     animation: modalEvScaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
