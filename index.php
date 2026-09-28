@@ -26,7 +26,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 
 </head>
 <body>
-    <!--  HEADER: logo y navegación  -->
+<!--  HEADER: logo y navegación  -->
     <header id="encabezado">
         <div class="logo">
             <a href="https://unitycetpro.wuaze.com/">
@@ -43,9 +43,17 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
         </nav>
     </header>
 
-    <!--  HERO: imagen principal arriba + texto con fondo abajo  -->
+<!--  HERO: imagen principal arriba + texto con fondo abajo  -->
     <section id="inicio" class="hero">
-        <!-- Zona 1: tarjeta de texto sobre fondo decorativo -->
+    <!-- Zona 1: imagen principal visible, sin texto -->
+        <div class="hero-imagen-principal">
+            <img src="/public/img/hero-2.webp"
+                 alt="Unity - Salón de belleza y barbería profesional en Zárate, San Juan de Lurigancho"
+                 class="hero-img-principal"
+                 fetchpriority="high"
+                 loading="eager">
+        </div>
+    <!-- Zona 2: tarjeta de texto sobre fondo decorativo -->
         <div class="hero-fondo">
             <div class="hero-card">
                 <div class="hero-badge">
@@ -74,7 +82,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
         </div>
     </section>
 
-    <!--  SERVICIOS: cabecera + tarjetas interactivas  -->
+<!--  SERVICIOS: cabecera + tarjetas interactivas  -->
     <section id="servicios" class="seccion-servicios-area">
         <div class="servicios-header-box">
             <span class="servicios-subtitulo">Experiencias Exclusivas</span>
@@ -85,7 +93,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
             </p>
         </div>
         <div class="servicios-grid-cards row gx-0">
-            <!-- Peluquería -->
+        <!-- Peluquería -->
             <article class="servicio-card col-12 col-md-6" style="background-image: url('/public/img/peluqueria-fondo-2.webp');" data-bs-target="#modal-peluqueria" data-bs-toggle="modal" role="button" tabindex="0">
                 <div class="servicio-overlay">
                     <h2>Peluquería & Color</h2>
@@ -97,7 +105,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </article>
 
-            <!-- Barbería -->
+        <!-- Barbería -->
             <article class="servicio-card col-12 col-md-6" style="background-image: url('/public/img/barberia-fondo-1.jpg');" data-bs-target="#modal-barberia" data-bs-toggle="modal" role="button" tabindex="0">
                 <div class="servicio-overlay">
                     <h2>Barbería Clásica</h2>
@@ -109,7 +117,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </article>
 
-            <!-- Salón de Belleza -->
+        <!-- Salón de Belleza -->
             <article class="servicio-card col-12 col-md-6" style="background-image: url('/public/img/salon-fondo-2.webp');" data-bs-target="#modal-belleza" data-bs-toggle="modal" role="button" tabindex="0">
                 <div class="servicio-overlay">
                     <h2>Salón & Estética</h2>
@@ -121,7 +129,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </article>
 
-            <!-- Diseño de Uñas -->
+        <!-- Diseño de Uñas -->
             <article class="servicio-card col-12 col-md-6" style="background-image: url('/public/img/unas-fondo-3.webp');" data-bs-target="#modal-unias" data-bs-toggle="modal" role="button" tabindex="0">
                 <div class="servicio-overlay">
                     <h2>Diseño de Uñas</h2>
@@ -135,18 +143,18 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
         </div>
     </section>
 
-    <!--  SOBRE NOSOTROS  -->
+<!--  SOBRE NOSOTROS  -->
     <section id="nosotros" class="seccion-nosotros">
         <div class="nosotros-contenedor">
             
-            <!-- Encabezado de la sección -->
+        <!-- Encabezado de la sección -->
             <div class="nosotros-header">
                 <span class="nosotros-subtitulo">Conoce Nuestra Esencia</span>
                 <h2 class="nosotros-titulo">Sobre Nosotros</h2>
                 <div class="titulo-adorno"></div>
             </div>
 
-            <!-- Fila principal: Imagen representativa + Historia -->
+        <!-- Fila principal: Imagen representativa + Historia -->
             <div class="nosotros-grid-principal">
                 <div class="nosotros-img-wrapper">
                     <div class="nosotros-img-marco">
@@ -170,7 +178,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                         Ubicados en el corazón de Zárate, San Juan de Lurigancho, combinamos técnicas tradicionales de barbería con las últimas tendencias internacionales en peluquería, coloración, tratamientos faciales y diseño de uñas. Cada detalle está pensado para que te sientas cómodo, renovado y seguro de tu mejor versión.
                     </p>
 
-                    <!-- Estadísticas / Métricas de confianza -->
+                <!-- Estadísticas / Métricas de confianza -->
                     <div class="nosotros-stats">
                         <div class="stat-item">
                             <span class="stat-numero">+3</span>
@@ -188,7 +196,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </div>
 
-            <!-- Fila secundaria: 4 Pilares / Valores -->
+        <!-- Fila secundaria: 4 Pilares / Valores -->
             <div class="nosotros-valores-grid">
                 <div class="valor-card">
                     <div class="valor-icono">
@@ -223,7 +231,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </div>
 
-            <!-- Llamado a la acción con redes -->
+        <!-- Llamado a la acción con redes -->
             <div class="nosotros-social-banner">
                 <div class="social-banner-contenido">
                     <h4>¿Quieres ver nuestros últimos trabajos y transformaciones?</h4>
@@ -245,12 +253,12 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
         </div>
     </section>
 
-    <!--  FOOTER: información completa, navegación, horarios, mapa y contacto  -->
+<!--  FOOTER: información completa, navegación, horarios, mapa y contacto  -->
     <footer id="contacto" class="footer-sitio">
         <div class="footer-contenedor">
             <div class="footer-grid">
 
-                <!-- Columna 1: Marca & Redes Sociales -->
+            <!-- Columna 1: Marca & Redes Sociales -->
                 <div class="footer-col footer-marca">
                     <a href="#inicio" class="footer-logo">
                         <img src="/public/img/logo-dorado.webp" alt="Logo Unity Estilo Total">
@@ -258,7 +266,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     <p class="footer-descripcion">
                         Tu espacio exclusivo en Zárate, SJL. Especialistas en corte unisex, barbería tradicional, coloración, tratamientos faciales y diseño de uñas.
                     </p>
-                    <!-- Redes Sociales -->
+                <!-- Redes Sociales -->
                     <div class="footer-redes">
                         <span class="redes-titulo">Síguenos en Nuestras Redes</span>
                         <div class="redes-iconos">
@@ -278,7 +286,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </div>
                 </div>
 
-                <!-- Columna 2: Servicios & Navegación -->
+            <!-- Columna 2: Servicios & Navegación -->
                 <div class="footer-col footer-servicios">
                     <h3 class="footer-titulo">Nuestros Servicios</h3>
                     <ul class="footer-links">
@@ -302,7 +310,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </ul>
                 </div>
 
-                <!-- Columna 3: Horarios de Atención -->
+            <!-- Columna 3: Horarios de Atención -->
                 <div class="footer-col footer-horarios">
                     <h3 class="footer-titulo">Horario de Atención</h3>
                     <div class="horarios-card">
@@ -323,7 +331,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </div>
                 </div>
 
-                <!-- Columna 4: Contacto & Ubicación con Mapa -->
+            <!-- Columna 4: Contacto & Ubicación con Mapa -->
                 <div class="footer-col footer-contacto">
                     <h3 class="footer-titulo">Contacto & Ubicación</h3>
                     <ul class="contacto-lista">
@@ -356,7 +364,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                         </li>
                     </ul>
 
-                    <!-- Mini Mapa Embebido -->
+                <!-- Mini Mapa Embebido -->
                     <div class="footer-mapa-box">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.5755348798444!2d-76.99953313045808!3d-12.02270829926326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5ee01df6595%3A0xe6913a74573c28ca!2sJiron%20Cajamarquilla%20905%2C%20San%20Juan%20de%20Lurigancho%2015401!5e0!3m2!1ses-419!2spe!4v1789063935753!5m2!1ses-419!2spe"
@@ -373,7 +381,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
             </div>
         </div>
 
-        <!-- Línea de copyright y pie de página -->
+    <!-- Línea de copyright y pie de página -->
         <div class="footer-copy">
             <div class="footer-copy-inner">
                 <p>&copy; 2026 Unity Estilo Total &middot; Todos los derechos reservados.</p><p class="developer-credit">Desarrollado por <a href="#" target="_blank" rel="noopener">Dante</a></p>
@@ -386,7 +394,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
         </div>
     </footer>
 
-    <!-- MODALES DE SERVICIOS  -->
+<!-- MODALES DE SERVICIOS  -->
     <!-- 1. MODAL PELUQUERÍA -->
     <div class="fade modal modal-luxury" id="modal-peluqueria" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -739,9 +747,38 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
             </div>
         </div>
     </div>
+    <!-- MODAL DE EVENTOS: Aparece al entrar a la página, estilo stories -->
+    <div class="modal-ev-overlay" id="modal-eventos" role="dialog" aria-modal="true" aria-label="Eventos y promociones" hidden>
+        <div class="modal-ev-contenedor" data-orientacion="vertical">
+            <!-- Barra de progreso stories (una barra por slide) -->
+            <div class="modal-ev-barra-wrap" role="progressbar" aria-label="Progreso del slide"></div>
+
+            <!-- Botón cerrar -->
+            <button class="modal-ev-cerrar" aria-label="Cerrar anuncios">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- Imagen del evento -->
+            <img class="modal-ev-imagen" src="" alt="Evento Unity" draggable="false">
+
+            <!-- Navegación: flechas -->
+            <button class="modal-ev-anterior" aria-label="Slide anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="modal-ev-siguiente" aria-label="Siguiente slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
     
 <!-- Script principal: hamburguesa, scroll, animaciones -->    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="/public/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/public/js/main.js"></script>
 </body>
 </html>

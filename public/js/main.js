@@ -142,3 +142,349 @@ if (copyright) {
         new Date().getFullYear()
     );
 }
+
+
+// ==========================================
+// 🎯 MODAL EVENTOS (STORIES STYLE)
+// ==========================================
+
+// Array de imágenes del evento — agregar/quitar según existan en /public/img/
+const EVENTO_SLIDES = [
+  { src: '/public/img/evento-v-01.webp', orientacion: 'vertical' },
+  { src: '/public/img/evento-h-01.webp', orientacion: 'horizontal' },
+  // Agregar más según corresponda
+];
+
+const SLIDE_DURACION = 5000; // ms por slide (ritmo suave, ajustable)
+const SESSION_KEY = 'unity_modal_evento_visto';
+
+// Variables de estado interno
+let slideActual = 0;
+let animacionFrameId = null;
+let tiempoTranscurrido = 0;
+let ultimoTimestamp = null;
+let estaPausado = false;
+let modalActivo = false;
+let listenersRegistrados = false;
+let elementoFocusPrevio = null;
+
+/**
+ * Renderiza o inicializa las barras de progreso según EVENTO_SLIDES
+ */
+function inicializarBarrasProgreso() {
+    const barraWrap = document.querySelector('.modal-ev-barra-wrap');
+    if (!barraWrap) return;
+
+    // Si ya existen las barras en el DOM, las usamos; si no, las creamos dinámicamente
+    const items = barraWrap.querySelectorAll('.modal-ev-barra-item');
+    if (items.length !== EVENTO_SLIDES.length) {
+        barraWrap.innerHTML = '';
+        EVENTO_SLIDES.forEach((_, idx) => {
+            const item = document.createElement('div');
+            item.classList.add('modal-ev-barra-item');
+
+            const fill = document.createElement('div');
+            fill.classList.add('modal-ev-barra-fill');
+            item.appendChild(fill);
+
+            // Permite saltar a un slide específico haciendo clic en su barra
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mostrarSlide(idx);
+            });
+
+            barraWrap.appendChild(item);
+        });
+    }
+}
+
+/**
+ * Anima la barra del slide activo con requestAnimationFrame
+ * Al alcanzar SLIDE_DURACION avanza automáticamente al siguiente slide
+ */
+function pasoProgreso(timestamp) {
+    if (!modalActivo) return;
+
+    if (!ultimoTimestamp) {
+        ultimoTimestamp = timestamp;
+    }
+
+    if (!estaPausado) {
+        const delta = timestamp - ultimoTimestamp;
+        tiempoTranscurrido += delta;
+
+        const porcentaje = Math.min((tiempoTranscurrido / SLIDE_DURACION) * 100, 100);
+
+        const fills = document.querySelectorAll('.modal-ev-barra-fill');
+        if (fills[slideActual]) {
+            fills[slideActual].style.width = `${porcentaje}%`;
+        }
+
+        if (tiempoTranscurrido >= SLIDE_DURACION) {
+            animacionFrameId = null;
+            avanzarSlide();
+            return;
+        }
+    }
+
+    ultimoTimestamp = timestamp;
+    animacionFrameId = requestAnimationFrame(pasoProgreso);
+}
+
+/**
+ * Inicia la animación de progreso del slide activo
+ */
+function iniciarProgreso() {
+    detenerProgreso();
+    ultimoTimestamp = null;
+    animacionFrameId = requestAnimationFrame(pasoProgreso);
+}
+
+/**
+ * Cancela cualquier animación de progreso en ejecución
+ */
+function detenerProgreso() {
+    if (animacionFrameId) {
+        cancelAnimationFrame(animacionFrameId);
+        animacionFrameId = null;
+    }
+}
+
+/**
+ * Pausa temporalmente el avance del slide (ej. hover o toque en pantalla)
+ */
+function pausarProgreso() {
+    estaPausado = true;
+}
+
+/**
+ * Reanuda el avance del slide activo tras una pausa
+ */
+function reanudarProgreso() {
+    if (estaPausado) {
+        estaPausado = false;
+        ultimoTimestamp = performance.now();
+    }
+}
+
+/**
+ * Muestra el slide en el índice indicado, actualiza imagen, barritas y flechas
+ * @param {number} index - Índice del slide a mostrar
+ */
+function mostrarSlide(index) {
+    if (!EVENTO_SLIDES || EVENTO_SLIDES.length === 0) return;
+    if (index < 0 || index >= EVENTO_SLIDES.length) return;
+
+    detenerProgreso();
+    slideActual = index;
+    tiempoTranscurrido = 0;
+    ultimoTimestamp = null;
+    estaPausado = false;
+
+    const slide = EVENTO_SLIDES[slideActual];
+    const imgElement = document.querySelector('.modal-ev-imagen');
+    const contenedor = document.querySelector('.modal-ev-contenedor');
+
+    if (imgElement) {
+        imgElement.src = slide.src;
+        imgElement.alt = `Evento especial ${slideActual + 1}`;
+    }
+
+    if (contenedor && slide.orientacion) {
+        contenedor.setAttribute('data-orientacion', slide.orientacion);
+    }
+
+    // Actualizar barras de progreso (pasadas al 100%, futuras al 0%, activa a 0%)
+    const fills = document.querySelectorAll('.modal-ev-barra-fill');
+    fills.forEach((fill, idx) => {
+        if (idx < slideActual) {
+            fill.style.width = '100%';
+        } else {
+            fill.style.width = '0%';
+        }
+    });
+
+    // Actualizar estado de flechas de navegación
+    const btnAnterior = document.querySelector('.modal-ev-anterior');
+    const btnSiguiente = document.querySelector('.modal-ev-siguiente');
+    if (btnAnterior) {
+        btnAnterior.disabled = (slideActual === 0);
+        btnAnterior.classList.toggle('deshabilitado', slideActual === 0);
+    }
+    if (btnSiguiente) {
+        const esUltimo = (slideActual === EVENTO_SLIDES.length - 1);
+        btnSiguiente.classList.toggle('ultimo-slide', esUltimo);
+    }
+
+    // Iniciar progreso automático
+    iniciarProgreso();
+}
+
+/**
+ * Avanza al siguiente slide o cierra el modal si llegó al final
+ */
+function avanzarSlide() {
+    if (slideActual + 1 < EVENTO_SLIDES.length) {
+        mostrarSlide(slideActual + 1);
+    } else {
+        cerrarModal();
+    }
+}
+
+/**
+ * Retrocede al slide anterior si existe
+ */
+function retrocederSlide() {
+    if (slideActual > 0) {
+        mostrarSlide(slideActual - 1);
+    } else {
+        // Si está en el primer slide, reinicia el tiempo del slide 0
+        mostrarSlide(0);
+    }
+}
+
+/**
+ * Cierra el modal, guarda en sessionStorage y detiene la animación
+ */
+function cerrarModal() {
+    modalActivo = false;
+    detenerProgreso();
+
+    const overlay = document.querySelector('.modal-ev-overlay');
+    if (overlay) {
+        overlay.classList.remove('activo');
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('hidden', '');
+    }
+
+    document.body.classList.remove('modal-ev-abierto');
+
+    if (elementoFocusPrevio) elementoFocusPrevio.focus();
+
+    try {
+        sessionStorage.setItem(SESSION_KEY, '1');
+    } catch (e) {
+        // En caso de modo incógnito restrictivo o almacenamiento deshabilitado
+        console.warn('No se pudo guardar en sessionStorage:', e);
+    }
+}
+
+/**
+ * Registra los event listeners del modal una sola vez
+ */
+function registrarEventListenersModal() {
+    if (listenersRegistrados) return;
+
+    const overlay = document.querySelector('.modal-ev-overlay');
+    const contenedor = document.querySelector('.modal-ev-contenedor');
+    const btnCerrar = document.querySelector('.modal-ev-cerrar');
+    const btnSiguiente = document.querySelector('.modal-ev-siguiente');
+    const btnAnterior = document.querySelector('.modal-ev-anterior');
+
+    // Botón cerrar
+    if (btnCerrar) {
+        btnCerrar.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            cerrarModal();
+        });
+    }
+
+    // Flechas de navegación
+    if (btnSiguiente) {
+        btnSiguiente.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            avanzarSlide();
+        });
+    }
+
+    if (btnAnterior) {
+        btnAnterior.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            retrocederSlide();
+        });
+    }
+
+    // Clic en overlay (fuera del contenedor) para cerrar
+    if (overlay) {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                cerrarModal();
+            }
+        });
+    }
+
+    // Pausar en hover sobre el modal
+    if (contenedor) {
+        contenedor.addEventListener('mouseenter', pausarProgreso);
+        contenedor.addEventListener('mouseleave', reanudarProgreso);
+
+        // Soporte para interacción táctil en dispositivos móviles
+        contenedor.addEventListener('touchstart', pausarProgreso, { passive: true });
+        contenedor.addEventListener('touchend', reanudarProgreso, { passive: true });
+        contenedor.addEventListener('touchcancel', reanudarProgreso, { passive: true });
+    }
+
+    // Tecla Escape para cerrar
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalActivo) {
+            cerrarModal();
+        }
+    });
+
+    listenersRegistrados = true;
+}
+
+/**
+ * Inicializa el modal de eventos stories-style al cargar la página
+ */
+function iniciarModalEventos() {
+    // Si ya fue visto en esta sesión, no hacer nada
+    try {
+        if (sessionStorage.getItem(SESSION_KEY)) {
+            return;
+        }
+    } catch (e) {
+        console.warn('No se pudo acceder a sessionStorage:', e);
+    }
+
+    const overlay = document.querySelector('.modal-ev-overlay');
+    if (!overlay || !EVENTO_SLIDES || EVENTO_SLIDES.length === 0) {
+        return;
+    }
+
+    // Registrar eventos y preparar barras
+    registrarEventListenersModal();
+    inicializarBarrasProgreso();
+
+    // Guardar elemento con foco previo antes de abrir el modal
+    elementoFocusPrevio = document.activeElement;
+
+    // Abrir modal y mostrar primer slide
+    modalActivo = true;
+    overlay.removeAttribute('hidden');
+    overlay.classList.add('activo');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-ev-abierto');
+
+    mostrarSlide(0);
+
+    const btnCerrar = document.querySelector('.modal-ev-cerrar');
+    if (btnCerrar) btnCerrar.focus();
+}
+
+// Inicialización automática al cargar el DOM
+document.addEventListener('DOMContentLoaded', iniciarModalEventos);
+
+// Exposición pública opcional para depuración o llamadas externas
+window.UnityModalEventos = {
+    iniciar: iniciarModalEventos,
+    cerrar: cerrarModal,
+    mostrarSlide,
+    avanzarSlide,
+    retrocederSlide,
+    pausar: pausarProgreso,
+    reanudar: reanudarProgreso
+};
