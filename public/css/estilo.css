@@ -1764,8 +1764,8 @@ body.modal-ev-abierto {
 
 /* Formato Portrait (vertical) */
 .modal-ev-contenedor[data-orientacion="vertical"] {
-    max-width: 420px;
-    aspect-ratio: 9 / 16;
+    max-width: 70vh;
+    /* aspect-ratio: 9 / 21; */
 }
 
 /* Formato Landscape (horizontal) */
@@ -1914,7 +1914,7 @@ body.modal-ev-abierto {
     }
 
     .modal-ev-contenedor[data-orientacion="vertical"] {
-        width: 95vw;
+        width: 80vw;
         max-width: 95vw;
     }
 
