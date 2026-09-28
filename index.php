@@ -72,14 +72,6 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 </div>
             </div>
         </div>
-<!-- Zona 2: imagen principal visible, sin texto -->
-        <div class="hero-imagen-principal">
-            <img src="/public/img/hero-2.webp"
-                 alt="Unity - Salón de belleza y barbería profesional en Zárate, San Juan de Lurigancho"
-                 class="hero-img-principal"
-                 fetchpriority="high"
-                 loading="eager">
-        </div>
     </section>
 
 <!--  SERVICIOS: cabecera + tarjetas interactivas  -->

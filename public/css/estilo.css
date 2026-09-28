@@ -95,6 +95,7 @@ body {
 .hero-imagen-principal {
     width: 100%;
     overflow: hidden;
+    margin-top: clamp(2rem, 83px + 1vh, 6rem);
 }
 
 .hero-img-principal {
@@ -109,7 +110,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 88px 24px 10px;
+    padding: 0 24px;
     background-color: var(--negro);
     background-image: url('/public/img/fondo-hero.webp');
     background-size: cover;
@@ -270,7 +271,7 @@ body {
     /* La imagen hero1.webp se mantiene igual en móvil — sin cambios */
 
     .hero-fondo {
-        padding: 88px 16px 10px;
+        padding: 0 16px;
     }
 
     .hero-card {
@@ -299,7 +300,7 @@ body {
    ========================================== */
 .seccion-servicios-area {
     background-color: #0d0d0d;
-    padding: 85px 0 0 0;
+    padding: 10vw 0 0 0;
 }
 
 /* Cabecera de la sección de servicios */
