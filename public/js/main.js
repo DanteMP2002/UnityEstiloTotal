@@ -306,14 +306,9 @@ function mostrarSlide(index) {
 
     // Actualizar estado de flechas de navegación
     const btnAnterior = document.querySelector('.modal-ev-anterior');
-    const btnSiguiente = document.querySelector('.modal-ev-siguiente');
     if (btnAnterior) {
         btnAnterior.disabled = (slideActual === 0);
         btnAnterior.classList.toggle('deshabilitado', slideActual === 0);
-    }
-    if (btnSiguiente) {
-        const esUltimo = (slideActual === EVENTO_SLIDES.length - 1);
-        btnSiguiente.classList.toggle('ultimo-slide', esUltimo);
     }
 
     // Iniciar progreso automático
@@ -321,13 +316,13 @@ function mostrarSlide(index) {
 }
 
 /**
- * Avanza al siguiente slide o cierra el modal si llegó al final
+ * Avanza al siguiente slide en bucle infinito (vuelve al inicio si llegó al final)
  */
 function avanzarSlide() {
     if (slideActual + 1 < EVENTO_SLIDES.length) {
         mostrarSlide(slideActual + 1);
     } else {
-        cerrarModal();
+        mostrarSlide(0);
     }
 }
 
