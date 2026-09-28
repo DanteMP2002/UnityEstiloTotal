@@ -404,53 +404,65 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
                                 <h6>Corte de Cabello Unisex</h6>
-                                <p>Asesoría de estilo según tu rostro, lavado revitalizante y peinado final.</p>
+                                <p>Cortes de cabello para damas, caballeros y niños.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 30 - 45 min</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 35</span>
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 10 </span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Coloración Completa & Tintes</h6>
-                                <p>Aplicación profesional con productos que protegen el brillo y la fibra capilar.</p>
+                                <h6>Coloración Capilar Completa & Tintes</h6>
+                                <p>El precio dependera del tipo de coloración y el tamaño del cabello.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 2 horas</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 120</span>
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 30</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Tratamiento de Keratina Brasileña</h6>
+                                <h6>Tratamiento capilar</h6>
                                 <p>Alisado progresivo, hidratación profunda y eliminación total del frizz.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 2.5 horas</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 150</span>
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 20</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Lavado Spa + Mascarilla Nutritiva</h6>
-                                <p>Masaje capilar relajante con nutrición profunda para cabellos secos o dañados.</p>
+                                <h6>TEÑIDO DE CEJAS</h6>
+                                <p>Diseño y pigmentación semipermanente para dar volumen, definición y color natural a tus cejas.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 25 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 25</span>
+                                <span class="precio-monto">S/ 15</span>
+                            </div>
+                        </div>
+
+                        <div class="servicio-fila-precio">
+                            <div class="servicio-datos">
+                                <h6>CEPILLADOS</h6>
+                                <p>Alaciado profesional y moldeado térmico con cepillo y secadora para un cabello con brillo, movimiento y libre de frizz.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i> 25 min</span>
+                            </div>
+                            <div class="servicio-precio-box">
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 20 - 40</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="modal-aviso-box">
+                    <div class="modal-aviso-box"> 
                         <i class="bi bi-info-circle-fill"></i>
                         <span>*Los precios en tintes y alisados pueden variar según largo y volumen del cabello previa evaluación.</span>
                     </div>
@@ -580,25 +592,25 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     <div class="servicios-lista-precios">
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Limpieza Facial Profunda</h6>
+                                <h6>LIMPIEZA FACIAL PROFUNDA</h6>
                                 <p>Vapor de ozono, exfoliación, extracción de impurezas, alta frecuencia y mascarilla calmante.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 60 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 90</span>
+                                <span class="precio-monto">S/ 35</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Maquillaje Profesional para Eventos</h6>
+                                <h6>Maquillaje</h6>
                                 <p>Preparación de piel, técnicas de contorno de alta durabilidad y pestañas de tira incluidas.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 45 - 60 min</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 80</span>
+                                <span class="precio-label">Entre</span>
+                                <span class="precio-monto">S/ 30 | S/ 50</span>
                             </div>
                         </div>
 
@@ -616,13 +628,13 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Depilación & Perfilado con Hilo</h6>
-                                <p>Diseño y definición de cejas con técnica hindú que no irrita la piel.</p>
-                                <span class="duracion-pill"><i class="bi bi-clock"></i> 15 - 20 min</span>
+                                <h6>DEPILACIÓN CON HILO, PINZA y NAVAJA </h6>
+                                <p>Diseño y perfilado facial adaptado a tus facciones mediante técnicas de hilo orgánico, pinza de precisión o navaja.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i>20 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 20</span>
+                                <span class="precio-monto">S/ 10</span>
                             </div>
                         </div>
                     </div>
@@ -668,9 +680,21 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     <div class="servicios-lista-precios">
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Manicure Semipermanente</h6>
-                                <p>Limpieza de cutículas, limado, base fortificadora y color con secado en lámpara LED.</p>
+                                <h6>DISEÑO DE UÑAS A COLOR CON DISEÑO</h6>
+                                <p>Combinación de esmaltado en gel de alta pigmentación con decoraciones personalizadas.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 45 min</span>
+                            </div>
+                            <div class="servicio-precio-box">
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 25</span>
+                            </div>
+                        </div>
+
+                        <div class="servicio-fila-precio">
+                            <div class="servicio-datos">
+                                <h6>DISEÑO DE UÑAS EN GEL</h6>
+                                <p>Refuerzo protector sobre tu uña natural para evitar quiebres y permitir su crecimiento.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i> 50 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
@@ -680,37 +704,37 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Uñas Acrílicas Esculpidas / Tips</h6>
-                                <p>Extensión duradera, forma a elección (almond, coffin, square) y acabado gloss.</p>
+                                <h6>DISEÑO DE UÑAS ACRÍLICAS</h6>
+                                <p>Esculpidas a mano con técnicas de vanguardia. Máxima resistencia, brillo impecable y acabados personalizados.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 2 horas</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 90</span>
+                                <span class="precio-monto">S/ 45</span>
+                            </div>
+                        </div> 
+
+                        <div class="servicio-fila-precio">
+                            <div class="servicio-datos">
+                                <h6>DISEÑO DE UÑAS OJO DE GATO</h6>
+                                <p>Esculpidas a mano con técnicas de vanguardia. Máxima resistencia, brillo impecable y acabados personalizados.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i> 2 horas</span>
+                            </div>
+                            <div class="servicio-precio-box">
+                                <span class="precio-label">A partir de</span>
+                                <span class="precio-monto">S/ 25</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Pedicure Spa Regenerativo</h6>
+                                <h6>Pedicure</h6>
                                 <p>Exfoliación con sales, retiro de asperezas, masaje hidratante y esmaltado completo.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 60 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 50</span>
-                            </div>
-                        </div>
-
-                        <div class="servicio-fila-precio">
-                            <div class="servicio-datos">
-                                <h6>Baño de Acrílico o Kapping Gel</h6>
-                                <p>Refuerzo protector sobre tu uña natural para evitar quiebres y permitir su crecimiento.</p>
-                                <span class="duracion-pill"><i class="bi bi-clock"></i> 50 min</span>
-                            </div>
-                            <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 60</span>
+                                <span class="precio-monto">S/ 40</span>
                             </div>
                         </div>
                     </div>
