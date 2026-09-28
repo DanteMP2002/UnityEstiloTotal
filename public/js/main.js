@@ -107,6 +107,27 @@ const observadorTarjetas = new IntersectionObserver((entradas) => {
 
 tarjetasServicio.forEach(tarjeta => observadorTarjetas.observe(tarjeta));
 
+// ==========================================
+// 📢 BOTÓN FLOTANTE "EVENTOS Y PROMOCIONES"
+// Abre el modal de eventos manualmente al hacer clic
+// ==========================================
+
+const btnAbrirModal = document.createElement('button');
+btnAbrirModal.classList.add('btn-abrir-modal-eventos');
+btnAbrirModal.setAttribute('aria-label', 'Ver eventos y promociones');
+btnAbrirModal.setAttribute('title', 'Ver eventos y promociones');
+btnAbrirModal.innerHTML = '<i class="bi bi-megaphone-fill"></i>';
+document.body.appendChild(btnAbrirModal);
+
+// Sincronizar visibilidad con el scroll (igual que btnArriba)
+window.addEventListener('scroll', () => {
+    btnAbrirModal.classList.toggle('visible', window.scrollY > 1);
+}, { passive: true });
+
+// Al hacer clic, abre el modal de eventos (forzando apertura)
+btnAbrirModal.addEventListener('click', () => {
+    iniciarModalEventos(true);
+});
 
 // ==========================================
 // 🔝 BOTÓN "VOLVER ARRIBA"
@@ -127,30 +148,6 @@ window.addEventListener('scroll', () => {
 btnArriba.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
-
-// ==========================================
-// 📢 BOTÓN FLOTANTE "EVENTOS Y PROMOCIONES"
-// Abre el modal de eventos manualmente al hacer clic
-// ==========================================
-
-const btnAbrirModal = document.createElement('button');
-btnAbrirModal.classList.add('btn-abrir-modal-eventos');
-btnAbrirModal.setAttribute('aria-label', 'Ver eventos y promociones');
-btnAbrirModal.setAttribute('title', 'Ver eventos y promociones');
-btnAbrirModal.innerHTML = '<i class="bi bi-megaphone-fill"></i>';
-document.body.appendChild(btnAbrirModal);
-
-// Sincronizar visibilidad con el scroll (igual que btnArriba)
-window.addEventListener('scroll', () => {
-    btnAbrirModal.classList.toggle('visible', window.scrollY > 350);
-}, { passive: true });
-
-// Al hacer clic, abre el modal de eventos (forzando apertura)
-btnAbrirModal.addEventListener('click', () => {
-    iniciarModalEventos(true);
-});
-
 
 // ==========================================
 // 📅 AÑO DINÁMICO EN EL COPYRIGHT
