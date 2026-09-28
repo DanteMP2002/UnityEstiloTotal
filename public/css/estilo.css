@@ -1,0 +1,1646 @@
+/* ==========================================
+   🎨 VARIABLES — Paleta premium para salón de estética
+   Negro profundo + blanco roto + dorado cálido + rosa arena
+   ========================================== */
+:root {
+    --negro:       #0D0D0D;   /* Fondo oscuro principal */
+    --blanco-roto: #F8F5F0;   /* Blanco cálido, no frío */
+    --dorado:      #C9A84C;   /* Acento dorado — único color de énfasis */
+    --rosa-arena:  #E8D5C4;   /* Tono piel suave para secciones claras */
+    --gris-texto:  #9A9A9A;   /* Texto secundario sobre fondos oscuros */
+    --overlay:     rgba(10, 8, 6, 0.62); /* Capa oscura sobre fotos de servicios */
+    --fuente-titulo: 'Playfair Display', Georgia, serif;
+    --fuente-cuerpo: 'Inter', Arial, sans-serif;
+}
+
+/* ==========================================
+   ⚙️ RESET Y BASE
+   ========================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--negro);
+    color: var(--blanco-roto);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   💻 HEADER — Barra de navegación fija y transparente
+   ========================================== */
+#encabezado {
+    position: fixed;        /* Queda fija al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    /* Fondo negro con leve transparencia; se ve elegante sobre el hero */
+    background-color: rgba(13, 13, 13, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25); /* Línea dorada sutil */
+}
+
+/* Logo: altura fija para no deformar */
+#encabezado .logo img {
+    height: 52px;
+    display: block;
+}
+
+/* Lista del menú en fila */
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+/* Links del menú */
+.menu-principal a {
+    color: var(--blanco-roto);
+    text-decoration: none;
+    font-size: clamp(0.85rem, 0.85rem + 1vw, 1.85rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.menu-principal a:hover {
+    color: var(--dorado); /* Al pasar el cursor cambia a dorado */
+}
+
+/* ==========================================
+   🖼️ HERO — Imagen principal + tarjeta de texto con fondo
+   ========================================== */
+
+/* Contenedor principal de la sección */
+#inicio.hero {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--negro);
+}
+
+/* ── Zona 1: imagen principal visible arriba ── */
+.hero-imagen-principal {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img-principal {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* hero1.webp es panorámica — se muestra completa */
+}
+
+/* ── Zona 2: texto con fondo-hero.webp de fondo ── */
+.hero-fondo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 88px 24px 10px;
+    background-color: var(--negro);
+    background-image: url('/public/img/fondo-hero.webp');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+/* Tarjeta central de texto — efecto cristal oscuro */
+.hero-card {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    width: 100%;
+    margin: 2rem auto;
+    background: rgba(10, 8, 6, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(201, 168, 76, 0.28);
+    border-radius: 16px;
+    padding: 2rem 1rem 3rem;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Insignia / Trust badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201, 168, 76, 0.12);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: var(--dorado);
+    padding: 7px 18px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    backdrop-filter: blur(6px);
+}
+
+.hero-badge i {
+    font-size: 0.9rem;
+}
+
+/* Título principal */
+.hero-card h1 {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--blanco-roto);
+    margin-bottom: 20px;
+}
+
+.hero-card h1 em {
+    font-style: italic;
+    color: var(--dorado);
+}
+
+/* Descripción */
+.hero-descripcion {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d4d0ce;
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+/* Botones de acción */
+.hero-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.btn-hero-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 30px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(201, 168, 76, 0.35);
+}
+
+.btn-hero-primary i {
+    font-size: 1.1rem;
+    color: var(--negro);
+}
+
+.btn-hero-primary:hover {
+    background-color: #dfbd5a;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(201, 168, 76, 0.5);
+}
+
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 28px;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: var(--blanco-roto);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.btn-hero-secondary:hover {
+    border-color: var(--dorado);
+    color: var(--dorado);
+    background: rgba(201, 168, 76, 0.08);
+}
+
+/* Puntos clave / Garantías */
+.hero-puntos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: #a8a8a8;
+}
+
+.hero-puntos span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-puntos i {
+    color: var(--dorado);
+}
+
+/* ── Responsive móvil ── */
+@media (max-width: 768px) {
+    /* La imagen hero1.webp se mantiene igual en móvil — sin cambios */
+
+    .hero-fondo {
+        padding: 88px 16px 10px;
+    }
+
+    .hero-card {
+        padding: 36px 24px 32px;
+        border-radius: 12px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .hero-card h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .hero-descripcion {
+        font-size: 0.95rem;
+    }
+
+    .hero-puntos {
+        gap: 14px;
+        font-size: 0.78rem;
+    }
+}
+
+/* ==========================================
+   🛠️ SERVICIOS — Cabecera + Grid de 4 tarjetas
+   ========================================== */
+.seccion-servicios-area {
+    background-color: #0d0d0d;
+    padding: 85px 0 0 0;
+}
+
+/* Cabecera de la sección de servicios */
+.servicios-header-box {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+}
+
+.servicios-subtitulo {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.servicios-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--blanco-roto);
+    margin: 0;
+}
+
+.servicios-intro {
+    font-size: 0.95rem;
+    color: #9f9f9f;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+.servicio-card {
+    position: relative;
+    min-height: 40vh;
+    background-size: cover;
+    background-position: center;
+    background-color: #141414;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.servicio-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1;
+}
+
+/* Overlay oscuro para legibilidad con viñeta */
+.servicio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 8, 6, 0.35) 0%, rgba(10, 8, 6, 0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    z-index: 2;
+    transition: background 0.35s ease;
+}
+
+.servicio-card:hover .servicio-overlay {
+    background: linear-gradient(180deg, rgba(10, 8, 6, 0.2) 0%, rgba(10, 8, 6, 0.78) 100%);
+}
+
+.servicio-card:hover {
+    box-shadow: inset 0 0 0 1px rgba(201, 168, 76, 0.3);
+}
+
+/* Fila superior con número y precio previo */
+.servicio-top-fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.servicio-numero {
+    font-family: var(--fuente-titulo);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--dorado);
+    display: block;
+}
+
+.servicio-precio-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--dorado);
+    background: rgba(201, 168, 76, 0.14);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    padding: 3px 10px;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+}
+
+/* Título de cada servicio */
+.servicio-overlay h2 {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+    font-weight: 700;
+    color: var(--blanco-roto);
+    margin-bottom: 8px;
+}
+
+.servicio-overlay p {
+    font-size: 0.9rem;
+    color: rgba(248, 245, 240, 0.82);
+    max-width: 380px;
+    margin-bottom: 14px;
+    line-height: 1.55;
+}
+
+/* Tags de servicios incluidos */
+.servicio-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.servicio-tags span {
+    font-size: 0.72rem;
+    color: #bbb;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 3px 9px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Botón de la tarjeta */
+.btn-servicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: 1px solid rgba(201, 168, 76, 0.6);
+    color: var(--dorado);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.servicio-card:hover .btn-servicio {
+    background-color: var(--dorado);
+    color: var(--negro);
+    border-color: var(--dorado);
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   👥 SOBRE NOSOTROS — Estética premium oscura con historia y valores
+   ========================================== */
+.seccion-nosotros {
+    background-color: #121110;
+    background-image: radial-gradient(circle at 50% 10%, rgba(201, 168, 76, 0.07) 0%, rgba(13, 13, 13, 0.98) 100%);
+    color: var(--blanco-roto);
+    padding: 90px 40px;
+    border-top: 1px solid rgba(201, 168, 76, 0.2);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    position: relative;
+}
+
+.nosotros-contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Encabezado centrado */
+.nosotros-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.nosotros-subtitulo {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nosotros-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--blanco-roto);
+    margin: 0;
+}
+
+.titulo-adorno {
+    width: 48px;
+    height: 2px;
+    background-color: var(--dorado);
+    margin: 16px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid principal: Imagen con badge + Historia */
+.nosotros-grid-principal {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 55px;
+    align-items: center;
+    margin-bottom: 65px;
+}
+
+.nosotros-img-wrapper {
+    position: relative;
+}
+
+.nosotros-img-marco {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.nosotros-img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.nosotros-img-marco:hover .nosotros-img {
+    transform: scale(1.04);
+}
+
+.nosotros-badge-flotante {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    background: rgba(13, 13, 13, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.nosotros-badge-flotante i {
+    font-size: 1.9rem;
+    color: var(--dorado);
+}
+
+.nosotros-badge-flotante strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--blanco-roto);
+    font-weight: 600;
+}
+
+.nosotros-badge-flotante span {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--dorado);
+}
+
+/* Textos de la historia */
+.nosotros-historia h3 {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+    font-weight: 600;
+    color: var(--blanco-roto);
+    margin-bottom: 18px;
+    line-height: 1.35;
+}
+
+.nosotros-lead {
+    font-size: 1.02rem;
+    color: #e5e2dc;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.nosotros-lead strong {
+    color: var(--dorado);
+}
+
+.nosotros-historia p {
+    font-size: 0.92rem;
+    color: #a8a8a8;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* Métricas de confianza */
+.nosotros-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 22px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    border-radius: 8px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-numero {
+    display: block;
+    font-family: var(--fuente-titulo);
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--dorado);
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.stat-etiqueta {
+    display: block;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #b0b0b0;
+}
+
+/* Fila de valores / pilares (4 tarjetas) */
+.nosotros-valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 50px;
+}
+
+.valor-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 26px 20px;
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.valor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--dorado);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201, 168, 76, 0.4);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.valor-card:hover::before {
+    opacity: 1;
+}
+
+.valor-icono {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: rgba(201, 168, 76, 0.12);
+    color: var(--dorado);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+    border: 1px solid rgba(201, 168, 76, 0.28);
+}
+
+.valor-card h4 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.05rem;
+    color: var(--blanco-roto);
+    margin-bottom: 10px;
+}
+
+.valor-card p {
+    font-size: 0.84rem;
+    color: #9a9a9a;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Banner de redes sociales */
+.nosotros-social-banner {
+    background: linear-gradient(135deg, rgba(201, 168, 76, 0.12) 0%, rgba(18, 18, 18, 0.95) 100%);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    padding: 26px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-banner-contenido h4 {
+    font-family: var(--fuente-titulo);
+    font-size: 1.15rem;
+    color: var(--blanco-roto);
+    margin-bottom: 5px;
+}
+
+.social-banner-contenido p {
+    font-size: 0.88rem;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+.social-banner-botones {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-social-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.25s ease;
+}
+
+.btn-ig {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-fb {
+    background: #1877f2;
+}
+
+.btn-tt {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-social-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+/* ==========================================
+   👣 FOOTER — Pie de página elegante, 4 columnas
+   ========================================== */
+#contacto.footer-sitio {
+    background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+    color: #9e9e9e;
+    padding: 70px 40px 25px;
+    border-top: 1px solid rgba(201, 168, 76, 0.25);
+    position: relative;
+    font-family: var(--fuente-cuerpo);
+}
+
+.footer-contenedor {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Grid de 4 columnas en escritorio */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.15fr 1.25fr;
+    gap: 42px;
+    margin-bottom: 45px;
+}
+
+/* Títulos de sección con acento dorado elegante */
+.footer-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dorado);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-titulo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 36px;
+    height: 2px;
+    background-color: var(--dorado);
+    border-radius: 2px;
+}
+
+/* Columna 1: Marca & Redes */
+.footer-marca .footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.footer-marca .footer-logo img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+.footer-descripcion {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #a8a8a8;
+    margin-bottom: 22px;
+}
+
+.redes-titulo {
+    display: block;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--dorado);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.redes-iconos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.red-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: var(--blanco-roto);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.red-btn:hover {
+    background: var(--dorado);
+    color: var(--negro);
+    border-color: var(--dorado);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(201, 168, 76, 0.35);
+}
+
+.red-btn.red-wsp:hover {
+    background: #25D366;
+    border-color: #25D366;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.35);
+}
+
+/* Columna 2: Servicios & Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #b5b5b5;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 400;
+    transition: all 0.25s ease;
+}
+
+.footer-links a i {
+    font-size: 0.75rem;
+    color: var(--dorado);
+    transition: transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: var(--dorado);
+    transform: translateX(5px);
+}
+
+.footer-links a:hover i {
+    transform: translateX(3px);
+}
+
+/* Columna 3: Horarios & Cita */
+.horarios-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.horario-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.horario-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.horario-dias {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #cfccc8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.horario-dias i {
+    color: var(--dorado);
+    font-size: 0.95rem;
+}
+
+.horario-horas {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--dorado);
+    padding-left: 24px;
+    letter-spacing: 0.02em;
+}
+
+.footer-cita-box {
+    background: rgba(201, 168, 76, 0.07);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.cita-info {
+    font-size: 0.8rem;
+    color: #c0c0c0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.cita-info i {
+    color: #25D366;
+}
+
+.btn-footer-cita {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.btn-footer-cita:hover {
+    background-color: #dfbd5a;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35);
+}
+
+/* Columna 4: Contacto & Ubicación */
+.contacto-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contacto-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contacto-icono {
+    color: var(--dorado);
+    font-size: 1.15rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.contacto-label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.contacto-lista a {
+    color: #d1cfcb;
+    text-decoration: none;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    transition: color 0.25s ease;
+    display: block;
+}
+
+.contacto-lista a:hover {
+    color: var(--dorado);
+}
+
+.footer-mapa-box {
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    margin-top: 6px;
+}
+
+.footer-mapa-box iframe {
+    width: 100%;
+    height: 120px;
+    display: block;
+    border: 0;
+}
+
+.mapa-enlace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--dorado);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.mapa-enlace:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+/* Línea de copyright y pie de página inferior */
+.footer-copy {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+    font-size: 0.82rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.footer-copy-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer-copy p {
+    margin: 0;
+    color: #888;
+    font-size: 0.82rem;
+}
+
+.footer-copy p strong {
+    color: var(--dorado);
+    font-weight: 600;
+}
+
+.footer-copy-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.footer-copy-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-copy-links a:hover {
+    color: var(--dorado);
+}
+
+.footer-copy-links .sep {
+    color: #444;
+}
+
+/* Tablets (1024px o menor) */
+@media (max-width: 1024px) {
+    .nosotros-valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 36px;
+    }
+}
+@media (min-width: 990px){
+    .nosotros-grid-principal {
+        grid-template-columns: 1fr 2fr;
+        gap: 36px;
+    }
+    article.servicio-card {
+        min-height: calc(400px + 6vw);
+    }
+}
+/* ==========================================
+   📱 RESPONSIVE — Móvil (hasta 768px)
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    /* Header: logo y menú apilados */
+    #encabezado {
+        flex-direction: column;
+        gap: 14px;
+        padding: 16px 20px;
+        text-align: center;
+    }
+
+    .menu-principal ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    /* Hero: título más pequeño en móvil */
+    .hero-card h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    /* Servicios: una sola columna en móvil */
+    #servicios {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cada tarjeta ocupa más alto en móvil */
+    .servicio-card {
+        min-height: 42vh;
+    }
+
+    /* Nosotros: adaptación para pantallas pequeñas */
+    .seccion-nosotros {
+        padding: 60px 20px;
+    }
+
+    .nosotros-grid-principal {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .nosotros-img {
+        height: 70%;
+    }
+
+    .nosotros-stats {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 16px 8px;
+    }
+
+    .stat-numero {
+        font-size: 1.5rem;
+    }
+
+    .stat-etiqueta {
+        font-size: 0.7rem;
+    }
+
+    .nosotros-valores-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .nosotros-social-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .social-banner-botones {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Footer: una columna en móvil */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    #contacto.footer-sitio {
+        padding: 50px 20px 24px;
+    }
+
+    .footer-copy-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .footer-copy-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+@media (768px <= width < 990px) {
+  article.servicio-card { min-height: calc(15rem + 9vw); }
+}
+
+/* ==========================================
+   🍔 MENÚ HAMBURGUESA (generado por JS)
+   ========================================== */
+
+/* El botón solo se muestra en móvil */
+.btn-hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+/* Cada línea del ícono hamburguesa */
+.btn-hamburguesa span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--blanco-roto);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animación: hamburguesa → X al abrir */
+.btn-hamburguesa.activo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.btn-hamburguesa.activo span:nth-child(2) { opacity: 0; }
+.btn-hamburguesa.activo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ==========================================
+   📌 HEADER COMPACTO AL HACER SCROLL
+   ========================================== */
+#encabezado.scrolled {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(13, 13, 13, 0.97);
+}
+
+/* ==========================================
+   🎯 ENLACE ACTIVO EN EL MENÚ
+   ========================================== */
+.menu-principal a.activo {
+    color: var(--dorado);
+}
+
+/* ==========================================
+   👁️ ANIMACIÓN DE ENTRADA DE TARJETAS
+   Estado inicial: invisible y desplazada hacia abajo
+   ========================================== */
+.servicio-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Estado final: visible y en su lugar */
+.servicio-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   🔝 BOTÓN VOLVER ARRIBA
+   ========================================== */
+.btn-arriba {
+    position: fixed;
+    bottom: 32px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;           /* No recibe clics cuando está invisible */
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+}
+
+/* Aparece cuando el JS le agrega la clase 'visible' */
+.btn-arriba.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.btn-arriba:hover {
+    background-color: var(--blanco-roto);
+}
+
+/* ==========================================
+   📱 RESPONSIVE MENÚ HAMBURGUESA (móvil)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* Muestra el botón hamburguesa en móvil */
+    .btn-hamburguesa {
+        display: flex;
+    }
+
+    /* Oculta el menú por defecto en móvil */
+    .menu-principal ul {
+        display: none;
+        position: absolute;
+        top: 100%;           /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background-color: rgba(13, 13, 13, 0.97);
+        padding: 20px 0;
+        border-top: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    /* Clase que agrega el JS al abrir el menú */
+    .menu-principal ul.menu-abierto {
+        display: flex;
+    }
+
+    .menu-principal a {
+        padding: 12px 0;
+        font-size: clamp(0.8rem, 0.8rem + 1vw, 2rem);
+    }
+
+    /* El header necesita position relative para que el menú se posicione correctamente */
+    #encabezado {
+        position: fixed;
+        flex-direction: row;   /* Logo a la izquierda, botón a la derecha */
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+        text-align: left;
+    }
+}
+
+/* ==========================================
+   ✨ MODALES LUXURY — Fichas de precios y reservas
+   ========================================== */
+.modal-luxury .modal-content {
+    background-color: #121110;
+    background-image: radial-gradient(circle at top right, rgba(201, 168, 76, 0.08) 0%, rgba(15, 14, 13, 0.98) 100%);
+    color: var(--blanco-roto);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(201, 168, 76, 0.15);
+    overflow: hidden;
+}
+
+.modal-luxury .modal-header {
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(201, 168, 76, 0.04);
+}
+
+.modal-cat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 4px;
+}
+
+.modal-cat-badge i {
+    font-size: 0.85rem;
+}
+
+.modal-luxury .modal-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--blanco-roto);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.modal-luxury .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-luxury .btn-close-white:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.modal-luxury .modal-body {
+    padding: 24px;
+}
+
+.modal-subtexto {
+    font-size: 0.88rem;
+    color: #b5b2ad;
+    margin-bottom: 18px;
+}
+
+/* Lista de filas de precios */
+.servicios-lista-precios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.servicio-fila-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 14px 18px;
+    transition: all 0.25s ease;
+}
+
+.servicio-fila-precio:hover {
+    background: rgba(201, 168, 76, 0.06);
+    border-color: rgba(201, 168, 76, 0.35);
+    transform: translateX(4px);
+}
+
+.servicio-fila-precio.destacado {
+    background: rgba(201, 168, 76, 0.08);
+    border-color: rgba(201, 168, 76, 0.4);
+    box-shadow: 0 4px 14px rgba(201, 168, 76, 0.12);
+}
+
+.servicio-datos h6 {
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--blanco-roto);
+    margin: 0 0 4px 0;
+}
+
+.servicio-datos p {
+    font-size: 0.82rem;
+    color: #928f8a;
+    line-height: 1.4;
+    margin: 0 0 6px 0;
+}
+
+.duracion-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    color: var(--dorado);
+    background: rgba(201, 168, 76, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Caja de precio a la derecha */
+.servicio-precio-box {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.precio-label {
+    display: block;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+}
+
+.precio-monto {
+    font-family: var(--fuente-titulo);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dorado);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+}
+
+/* Aviso al pie del body */
+.modal-aviso-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.78rem;
+    color: #999;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--dorado);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    line-height: 1.45;
+}
+
+.modal-aviso-box i {
+    color: var(--dorado);
+    margin-top: 2px;
+}
+
+/* Modal Footer */
+.modal-luxury .modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-modal-cerrar {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #aaa;
+    padding: 9px 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-modal-cerrar:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-modal-reservar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+}
+
+.btn-modal-reservar i {
+    font-size: 1.1rem;
+}
+
+.btn-modal-reservar:hover {
+    background-color: #20ba59;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}

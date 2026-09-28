@@ -1,0 +1,20 @@
+# Ignorar configuraciones del editor de código
+/.vscode/
+
+# Ignorar las credenciales de tu FTP (¡Muy importante para que no roben tu contraseña en GitHub!)
+ftp-kr.json
+ftp-simple.json
+
+# Archivos del sistema operativo
+Thumbs.db
+.DS_Store
+
+# ignorar la base de datos
+config.php
+#ignorar pruebas
+prueba.php
+prueba.css
+# ingnorar caperta 
+.continue
+.php_tmp/
+.cursor/
