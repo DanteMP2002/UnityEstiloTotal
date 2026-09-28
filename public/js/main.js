@@ -150,9 +150,17 @@ if (copyright) {
 
 // Array de imágenes del evento — agregar/quitar según existan en /public/img/
 const EVENTO_SLIDES = [
-  { src: '/public/img/evento-v-01.webp', orientacion: 'vertical' },
-  { src: '/public/img/evento-h-01.webp', orientacion: 'horizontal' },
+    //Formato: { src: 'ruta/imagen.webp', orientacion: 'vertical' | 'horizontal' }
+  //{ src: '/public/img/evento-v-01.webp', orientacion: 'vertical' },
+  //{ src: '/public/img/evento-h-01.webp', orientacion: 'horizontal' },
   // Agregar más según corresponda
+  { src: '/public/img/evento-v-02.webp', orientacion: 'vertical' },
+  
+  { src: '/public/img/evento-v-03.webp', orientacion: 'vertical' },
+  //{ src: '/public/img/evento-h-03.webp', orientacion: 'horizontal' },
+  { src: '/public/img/evento-v-04.webp', orientacion: 'vertical' },
+  //{ src: '/public/img/evento-h-04.webp', orientacion: 'horizontal' }
+  { src: '/public/img/evento-v-05.webp', orientacion: 'vertical' },
 ];
 
 const SLIDE_DURACION = 5000; // ms por slide (ritmo suave, ajustable)

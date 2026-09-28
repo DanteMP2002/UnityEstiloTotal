@@ -747,9 +747,7 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 
             <!-- Botón cerrar -->
             <button class="modal-ev-cerrar" aria-label="Cerrar anuncios">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+                <i class="bi bi-x-lg"></i>
             </button>
 
             <!-- Imagen del evento -->
