@@ -886,6 +886,21 @@ body {
     box-shadow: 0 5px 15px rgba(201, 168, 76, 0.35);
 }
 
+.red-btn.red-facebook:hover{
+    background: #0066ff;
+    color: whitesmoke;
+}
+
+.red-btn.red-instagram:hover{
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: whitesmoke;
+}
+
+.red-btn.red-tiktok:hover{
+    background: #000;
+    color: whitesmoke;
+}
+
 .red-btn.red-wsp:hover {
     background: #25D366;
     border-color: #25D366;
@@ -1478,7 +1493,7 @@ body {
 
 .modal-luxury .modal-header {
     border-bottom: 1px solid rgba(201, 168, 76, 0.2);
-    padding: 20px 24px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1521,10 +1536,6 @@ body {
     transform: rotate(90deg);
 }
 
-.modal-luxury .modal-body {
-    padding: 24px;
-}
-
 .modal-subtexto {
     font-size: 0.88rem;
     color: #b5b2ad;
@@ -1559,21 +1570,29 @@ body {
 
 .servicio-fila-precio.destacado {
     background: rgba(201, 168, 76, 0.08);
-    border-color: rgba(201, 168, 76, 0.4);
+    border-color: rgba(201, 168, 76, 0.75);
     box-shadow: 0 4px 14px rgba(201, 168, 76, 0.12);
+    h6 { color: var(--dorado); }
+    p { color: #fff; }
+    strong { color: var(--dorado); }
+    .servicio-precio-box { 
+        .precio-monto { color: var(--dorado); }
+        .precio-label { color: #fff; }
+     }
 }
 
 .servicio-datos h6 {
     font-family: var(--fuente-cuerpo);
-    font-size: 0.96rem;
+    font-size: clamp(0.82rem, 0.82rem + 0.1vw, 0.92rem);
     font-weight: 600;
     color: var(--blanco-roto);
     margin: 0 0 4px 0;
+    text-transform: uppercase;
 }
 
 .servicio-datos p {
-    font-size: 0.82rem;
-    color: #928f8a;
+    font-size: clamp(0.72rem, 0.72rem + 0.1vw, 0.82rem);
+    color: rgb(180, 170, 170);
     line-height: 1.4;
     margin: 0 0 6px 0;
 }
@@ -1597,15 +1616,15 @@ body {
 
 .precio-label {
     display: block;
-    font-size: 0.68rem;
+    font-size: clamp(0.68rem, 0.68rem + 0.1vw, 0.78rem);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #888;
 }
 
 .precio-monto {
-    font-family: var(--fuente-titulo);
-    font-size: 1.35rem;
+    font-family:'Roboto', sans-serif;
+    font-size: clamp(1.05rem, 1.05rem + 0.2vw, 1.35rem);
     font-weight: 700;
     color: var(--dorado);
     letter-spacing: 0.02em;
@@ -1621,7 +1640,8 @@ body {
     color: #999;
     background: rgba(255, 255, 255, 0.02);
     border-left: 2px solid var(--dorado);
-    padding: 10px 14px;
+    padding: 0px 14px;
+    margin: 10px 0;
     border-radius: 0 6px 6px 0;
     line-height: 1.45;
 }
@@ -1725,7 +1745,7 @@ body.modal-ev-abierto {
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 0 16px;
     opacity: 0;
 }
 
@@ -1750,7 +1770,6 @@ body.modal-ev-abierto {
 .modal-ev-contenedor {
     position: relative;
     width: 100%;
-    max-height: 90vh;
     border-radius: 16px;
     overflow: hidden;
     background: black;
@@ -1764,14 +1783,16 @@ body.modal-ev-abierto {
 
 /* Formato Portrait (vertical) */
 .modal-ev-contenedor[data-orientacion="vertical"] {
-    max-width: 70vh;
+    height: 95vh;
+    width: clamp(325px, 80vw, 650px);
     /* aspect-ratio: 9 / 21; */
 }
 
 /* Formato Landscape (horizontal) */
 .modal-ev-contenedor[data-orientacion="horizontal"] {
-    max-width: 780px;
-    aspect-ratio: 16 / 9;
+    width: clamp(400px, 80vw, 800px);
+    height: clamp(225px, 45vh, 450px);
+    /*aspect-ratio: 16 / 9;*/
 }
 
 /* Imagen de la historia/evento */
@@ -1910,28 +1931,17 @@ body.modal-ev-abierto {
 /* Adaptabilidad Responsive (móviles) */
 @media (max-width: 500px) {
     .modal-ev-overlay {
-        padding: 8px;
-    }
-
-    .modal-ev-contenedor[data-orientacion="vertical"] {
-        width: 80vw;
-        max-width: 95vw;
-    }
-
-    .modal-ev-contenedor[data-orientacion="horizontal"] {
-        width: 95vw;
-        max-width: 95vw;
-        aspect-ratio: 16 / 9;
+        padding: 0 8px;
     }
 
     .modal-ev-anterior,
     .modal-ev-siguiente {
-        width: 36px;
-        height: 36px;
+        width: 25px;
+        height: 25px;
     }
 
-    .modal-ev-anterior svg,
-    .modal-ev-siguiente svg {
+    .modal-ev-anterior i,
+    .modal-ev-siguiente i {
         width: 20px;
         height: 20px;
     }

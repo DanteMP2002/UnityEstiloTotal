@@ -262,13 +262,13 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     <div class="footer-redes">
                         <span class="redes-titulo">Síguenos en Nuestras Redes</span>
                         <div class="redes-iconos">
-                            <a href="https://www.facebook.com/profile.php?id=61594175556210" target="_blank" rel="noopener noreferrer" class="red-btn" aria-label="Facebook">
+                            <a href="https://www.facebook.com/profile.php?id=61594175556210" target="_blank" rel="noopener noreferrer" class="red-btn red-facebook" aria-label="Facebook">
                                 <i class="bi bi-facebook"></i>
                             </a>
-                            <a href="https://www.instagram.com/unity.estilototal/" target="_blank" rel="noopener noreferrer" class="red-btn" aria-label="Instagram">
+                            <a href="https://www.instagram.com/unity.estilototal/" target="_blank" rel="noopener noreferrer" class="red-btn red-instagram" aria-label="Instagram">
                                 <i class="bi bi-instagram"></i>
                             </a>
-                            <a href="https://www.tiktok.com/@unity.estilototal" target="_blank" rel="noopener noreferrer" class="red-btn" aria-label="TikTok">
+                            <a href="https://www.tiktok.com/@unity.estilototal" target="_blank" rel="noopener noreferrer" class="red-btn red-tiktok" aria-label="TikTok">
                                 <i class="bi bi-tiktok"></i>
                             </a>
                             <a href="https://wa.me/51920134856?text=<?= rawurlencode('Hola Unity, deseo solicitar información o reservar una cita.') ?>" target="_blank" rel="noopener noreferrer" class="red-btn red-wsp" aria-label="WhatsApp">
@@ -281,24 +281,21 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
             <!-- Columna 2: Servicios & Navegación -->
                 <div class="footer-col footer-servicios">
                     <h3 class="footer-titulo">Nuestros Servicios</h3>
+
                     <ul class="footer-links">
-                        <li>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-peluqueria"><i class="bi bi-chevron-right"></i> Peluquería </a>
-                        </li>
-                        <li>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-barberia"><i class="bi bi-chevron-right"></i> Barbería </a>
-                        </li>
-                        <li>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-belleza"><i class="bi bi-chevron-right"></i> Salón de Belleza </a>
-                        </li>
-                        <li>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-unias"><i class="bi bi-chevron-right"></i> Diseño de Uñas </a>
-                        </li>
-                        <li>
-                            <a href="#nosotros">
-                                <i class="bi bi-chevron-right"></i> Sobre Nosotros
-                            </a>
-                        </li>
+
+                        <li> <a href="#" data-bs-toggle="modal" data-bs-target="#modal-peluqueria"><i class="bi bi-chevron-right"></i> Peluquería </a> </li>
+
+                        <li> <a href="#" data-bs-toggle="modal" data-bs-target="#modal-barberia"><i class="bi bi-chevron-right"></i> Barbería </a> </li>
+
+                        <li> <a href="#" data-bs-toggle="modal" data-bs-target="#modal-belleza"><i class="bi bi-chevron-right"></i> Salón de Belleza </a> </li>
+
+                        <li> <a href="#" data-bs-toggle="modal" data-bs-target="#modal-unias"><i class="bi bi-chevron-right"></i> Diseño de Uñas </a> </li>
+                    <!-- No es necesario el modal y el id-modal porque lo hace el js -->
+                        <li> <a class="promo-evento" onclick="iniciarModalEventos(true)"><i class="bi bi-chevron-right"></i> Promociones </a> </li>
+
+                        <li> <a href="#nosotros"> <i class="bi bi-chevron-right"></i> Sobre Nosotros </a> </li>
+
                     </ul>
                 </div>
 
@@ -427,6 +424,18 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
+                                <h6>LACEADOS</h6>
+                                <p>Alisado profesional y brillo duradero. El precio final varía según el tipo de tratamiento y el largo de tu cabello.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i> 2~3 h</span>
+                            </div>
+                            <div class="servicio-precio-box">
+                                <span class="precio-label">precio entre</span>
+                                <span class="precio-monto">S/ 70 a S/ 450</span>
+                            </div>
+                        </div>
+
+                        <div class="servicio-fila-precio">
+                            <div class="servicio-datos">
                                 <h6>Tratamiento capilar</h6>
                                 <p>Alisado progresivo, hidratación profunda y eliminación total del frizz.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 2.5 horas</span>
@@ -468,8 +477,8 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </div>
 
                     <div class="modal-aviso-box">
-                        <i class="bi bi-info-circle-fill"></i>
-                        <span>*<?= $mensajeReserva ?></span>
+                        <i class="bi bi-clock"></i>
+                        <span><?= $mensajeReserva ?></span>
                     </div>
 
                     <div class="modal-aviso-box">
@@ -504,61 +513,61 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     <div class="servicios-lista-precios">
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Corte Clásico o Degradé (Fade)</h6>
-                                <p>Low, Mid o High Fade con perfilado limpio y producto fijador mate o brillante.</p>
+                                <h6>Corte INDIVIDUAL</h6>
+                                <p>Estilo impecable y personalizado para ti.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 30 - 40 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 30</span>
+                                <span class="precio-monto">S/ 15</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Perfilado & Arreglo de Barba</h6>
-                                <p>Delimitación con navaja, toalla caliente emoliente y aceites aromáticos para barba.</p>
+                                <h6>CORTES CON DISEÑOS</h6>
+                                <p>Arte y tendencia en tu cabello. Diseños únicos hechos a tu medida.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 20 - 25 min</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
+                                <span class="precio-label">desde</span>
                                 <span class="precio-monto">S/ 25</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio destacado">
                             <div class="servicio-datos">
-                                <h6>Pack Completo (Corte + Barba Spa)</h6>
-                                <p>Experiencia total: Corte en degradé, arreglo de barba, toalla caliente y lavado.</p>
+                                <h6>PROMOCIÓN  DUO</h6>
+                                <p>¡Ven acompañado y ahorra! 2 cortes perfectos por menos.</p>   <p><strong>¡Ahorra hasta 5 soles!</strong></p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 50 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Promoción</span>
-                                <span class="precio-monto">S/ 50</span>
+                                <span class="precio-monto">S/ 25</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Black Mask (Mascarilla Puntos Negros)</h6>
-                                <p>Limpieza express para eliminar impurezas y puntos negros de la zona T facial.</p>
+                                <h6>COLORACIÓN CAPILAR</h6>
+                                <p>Cambio de look profesional. El precio final varía según el tipo de cabello y material.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 15 min</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 20</span>
+                                <span class="precio-label">Precio entre</span>
+                                <span class="precio-monto">S/ 30 - S/ 100</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="modal-aviso-box">
                         <i class="bi bi-info-circle-fill"></i>
-                        <span>*Utilizamos navajas 100% descartables y máquinas desinfectadas entre cada cliente.</span>
+                        <span>Utilizamos navajas 100% descartables y máquinas desinfectadas entre cada cliente.</span>
                     </div>
 
                     <div class="modal-aviso-box">
-                        <i class="bi bi-info-circle-fill"></i>
-                        <span>*<?= $mensajeReserva ?></span>
+                        <i class="bi bi-clock"></i>
+                        <span><?= $mensajeReserva ?></span>
                     </div>
 
                     <div class="modal-aviso-box">
@@ -590,10 +599,23 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                 <div class="modal-body">
                     <p class="modal-subtexto">Tratamientos faciales e imagen integral para realzar tu belleza natural:</p>
                     <div class="servicios-lista-precios">
+
+                        <div class="servicio-fila-precio">
+                            <div class="servicio-datos">
+                                <h6>TRATAMIENTO FACIAL</h6>
+                                <p>Hidratación y cuidado para tu rostro. Ideal para refrescar la piel y lucir un cutis limpio.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i> 50 min</span>
+                            </div>
+                            <div class="servicio-precio-box">
+                                <span class="precio-label">Precio</span>
+                                <span class="precio-monto">S/ 30</span>
+                            </div>
+                        </div>
+
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
                                 <h6>LIMPIEZA FACIAL PROFUNDA</h6>
-                                <p>Vapor de ozono, exfoliación, extracción de impurezas, alta frecuencia y mascarilla calmante.</p>
+                                <p>Elimina impurezas con vapor y con mascarillas para renovar tu rostro.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 60 min</span>
                             </div>
                             <div class="servicio-precio-box">
@@ -605,31 +627,30 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
                                 <h6>Maquillaje</h6>
-                                <p>Preparación de piel, técnicas de contorno de alta durabilidad y pestañas de tira incluidas.</p>
+                                <p>Preparación de piel y técnicas de contorno de alta durabilidad.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i> 45 - 60 min</span>
                             </div>
                             <div class="servicio-precio-box">
-                                <span class="precio-label">Entre</span>
-                                <span class="precio-monto">S/ 30 | S/ 50</span>
+                                <span class="precio-label">precio entre</span>
+                                <span class="precio-monto">S/ 30 a S/ 50</span>
                             </div>
                         </div>
 
                         <div class="servicio-fila-precio">
                             <div class="servicio-datos">
-                                <h6>Lifting & Rizado de Pestañas</h6>
-                                <p>Curvatura y color natural desde la raíz, efecto máscara duradero por semanas.</p>
-                                <span class="duracion-pill"><i class="bi bi-clock"></i> 45 min</span>
+                                <h6>DEPILACIÓN CON HILO, PINZA o NAVAJA </h6>
+                                <p>Diseño y perfilado facial adaptado a tus facciones mediante técnicas de hilo orgánico, pinza de precisión o navaja.</p>
+                                <span class="duracion-pill"><i class="bi bi-clock"></i>20 min</span>
                             </div>
                             <div class="servicio-precio-box">
                                 <span class="precio-label">Precio</span>
-                                <span class="precio-monto">S/ 50</span>
+                                <span class="precio-monto">S/ 10</span>
                             </div>
                         </div>
-
                         <div class="servicio-fila-precio">
-                            <div class="servicio-datos">
-                                <h6>DEPILACIÓN CON HILO, PINZA y NAVAJA </h6>
-                                <p>Diseño y perfilado facial adaptado a tus facciones mediante técnicas de hilo orgánico, pinza de precisión o navaja.</p>
+                            <div class="servicio-datos ">
+                                <h6>KIT DE CEJAS (TODO) </h6>
+                                <p>Perfilado total, pigmentación y definición para dejar tus cejas perfectas y bien marcadas.</p>
                                 <span class="duracion-pill"><i class="bi bi-clock"></i>20 min</span>
                             </div>
                             <div class="servicio-precio-box">
@@ -645,8 +666,8 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </div>
 
                     <div class="modal-aviso-box">
-                        <i class="bi bi-info-circle-fill"></i>
-                        <span>*<?= $mensajeReserva ?></span>
+                        <i class="bi bi-clock"></i>
+                        <span><?= $mensajeReserva ?></span>
                     </div>
 
                     <div class="modal-aviso-box">
@@ -745,8 +766,8 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
                     </div>
 
                     <div class="modal-aviso-box">
-                        <i class="bi bi-info-circle-fill"></i>
-                        <span>*<?= $mensajeReserva ?></span>
+                        <i class="bi bi-clock"></i>
+                        <span><?= $mensajeReserva ?></span>
                     </div>
 
                     <div class="modal-aviso-box">
