@@ -873,7 +873,7 @@ foreach ($categorias as $cat) {
     <header class="navbar navbar-admin" role="banner">
         <div class="container-fluid px-2 px-md-3">
             <a class="navbar-brand-wrap" href="index.php" title="Panel de Administración Unity">
-                <img src="../public/img/logo-dorado.webp" alt="Unity Logo" width="36" height="36">
+                <img src="../public/img/logo-dorado-v.webp" alt="Unity Logo" width="36" height="36">
                 <div>
                     <h1 class="navbar-brand-title">UNITY <span>ESTILO TOTAL</span></h1>
                 </div>
