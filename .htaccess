@@ -1,0 +1,46 @@
+# ==============================================================================
+# Unity Estilo Total - Configuración de Servidor Apache (.htaccess Raíz)
+# ==============================================================================
+
+# Deshabilitar listado de directorios
+Options -Indexes
+
+# Prevenir acceso a archivos ocultos (ej. .git, .env)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. No alterar ni redirigir peticiones hacia el panel de administración (/admin)
+    RewriteRule ^admin(/.*)?$ - [L]
+
+    # 2. No alterar peticiones que ya incluyan el prefijo /public
+    RewriteRule ^public(/.*)?$ - [L]
+
+    # 3. Si el archivo o directorio solicitado existe físicamente en la raíz, servirlo
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 4. Redirigir la raíz hacia public/
+    RewriteRule ^$ public/ [L,QSA]
+
+    # 5. Enrutar cualquier otra solicitud que no sea admin hacia public/
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
+
+# Cabeceras de seguridad HTTP básicas
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

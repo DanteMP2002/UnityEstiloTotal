@@ -1,0 +1,11 @@
+# Bloqueo total de acceso directo HTTP para la carpeta de datos
+# Compatible con Apache 2.4 y Apache 2.2
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>

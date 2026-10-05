@@ -1,0 +1,289 @@
+{
+  "categorias": [
+    {
+      "id": "peluqueria",
+      "titulo": "Peluquería & Color",
+      "titulo_modal": "Peluquería & Color",
+      "descripcion": "Cortes modernos, balayage, tintes, peinados y tratamientos capilares intensivos.",
+      "tags": [
+        "Cortes",
+        "Coloración",
+        "Keratina"
+      ],
+      "imagen_fondo": "img/peluqueria-fondo-2.webp",
+      "modal_id": "modal-peluqueria",
+      "badge_icono": "bi-scissors",
+      "badge_texto": "Especialidad",
+      "modal_subtexto": "Servicios profesionales para damas y caballeros con diagnóstico personalizado:",
+      "aviso_especifico": "*Los precios en tintes y alisados pueden variar según largo y volumen del cabello previa evaluación.",
+      "whatsapp_mensaje": "Hola Unity, deseo consultar y agendar una cita para Peluquería.",
+      "servicios": [
+        {
+          "id": "pel-1",
+          "nombre": "Corte de Cabello Unisex",
+          "descripcion": "Cortes de cabello para damas, caballeros y niños.",
+          "duracion": "30 - 45 min",
+          "precio_label": "A partir de",
+          "precio": "S/ 10",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "pel-2",
+          "nombre": "Coloración Capilar Completa & Tintes",
+          "descripcion": "El precio dependera del tipo de coloración y el tamaño del cabello.",
+          "duracion": "2 horas",
+          "precio_label": "A partir de",
+          "precio": "S/ 30",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "pel-3",
+          "nombre": "LACEADOS",
+          "descripcion": "Alisado profesional y brillo duradero. El precio final varía según el tipo de tratamiento y el largo de tu cabello.",
+          "duracion": "2~3 h",
+          "precio_label": "precio entre",
+          "precio": "S/ 70 a S/ 450",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "pel-4",
+          "nombre": "Tratamiento capilar",
+          "descripcion": "Alisado progresivo, hidratación profunda y eliminación total del frizz.",
+          "duracion": "2.5 horas",
+          "precio_label": "A partir de",
+          "precio": "S/ 20",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "pel-5",
+          "nombre": "TEÑIDO DE CEJAS",
+          "descripcion": "Diseño y pigmentación semipermanente para dar volumen, definición y color natural a tus cejas.",
+          "duracion": "25 min",
+          "precio_label": "Precio",
+          "precio": "S/ 15",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "pel-6",
+          "nombre": "CEPILLADOS",
+          "descripcion": "Alaciado profesional y moldeado térmico con cepillo y secadora para un cabello con brillo, movimiento y libre de frizz.",
+          "duracion": "25 min",
+          "precio_label": "A partir de",
+          "precio": "S/ 20 - 40",
+          "destacado": false,
+          "nota_adicional": ""
+        }
+      ]
+    },
+    {
+      "id": "barberia",
+      "titulo": "Barbería Clásica",
+      "titulo_modal": "Barbería Tradicional & Moderna",
+      "descripcion": "Cortes en degradé, perfilado, arreglo de barba y tratamiento con toalla caliente.",
+      "tags": [
+        "Fade",
+        "Barba",
+        "Pack Completo"
+      ],
+      "imagen_fondo": "img/barberia-fondo-1.webp",
+      "modal_id": "modal-barberia",
+      "badge_icono": "bi-person-badge",
+      "badge_texto": "Barbería",
+      "modal_subtexto": "Técnicas de barbería clásica y urbana con navaja descartable y esterilización:",
+      "aviso_especifico": "Utilizamos navajas 100% descartables y máquinas desinfectadas entre cada cliente.",
+      "whatsapp_mensaje": "Hola Unity, deseo agendar un turno para Barbería.",
+      "servicios": [
+        {
+          "id": "bar-1",
+          "nombre": "Corte INDIVIDUAL",
+          "descripcion": "Estilo impecable y personalizado para ti.",
+          "duracion": "30 - 40 min",
+          "precio_label": "Precio",
+          "precio": "S/ 15",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bar-2",
+          "nombre": "CORTES CON DISEÑOS",
+          "descripcion": "Arte y tendencia en tu cabello. Diseños únicos hechos a tu medida.",
+          "duracion": "20 - 25 min",
+          "precio_label": "desde",
+          "precio": "S/ 25",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bar-3",
+          "nombre": "PROMOCIÓN  DUO",
+          "descripcion": "¡Ven acompañado y ahorra! 2 cortes perfectos por menos.",
+          "duracion": "50 min",
+          "precio_label": "Promoción",
+          "precio": "S/ 25",
+          "destacado": true,
+          "nota_adicional": "¡Ahorra hasta 5 soles!"
+        },
+        {
+          "id": "bar-4",
+          "nombre": "COLORACIÓN CAPILAR",
+          "descripcion": "Cambio de look profesional. El precio final varía según el tipo de cabello y material.",
+          "duracion": "15 min",
+          "precio_label": "Precio entre",
+          "precio": "S/ 30 - S/ 100",
+          "destacado": false,
+          "nota_adicional": ""
+        }
+      ]
+    },
+    {
+      "id": "belleza",
+      "titulo": "Salón & Estética",
+      "titulo_modal": "Salón de Belleza & Tratamientos",
+      "descripcion": "Limpieza facial profunda, maquillaje profesional, depilación con hilo y cejas.",
+      "tags": [
+        "Faciales",
+        "Maquillaje",
+        "Cejas"
+      ],
+      "imagen_fondo": "img/salon-fondo-2.webp",
+      "modal_id": "modal-belleza",
+      "badge_icono": "bi-stars",
+      "badge_texto": "Estética Facial",
+      "modal_subtexto": "Tratamientos faciales e imagen integral para realzar tu belleza natural:",
+      "aviso_especifico": "*Trabajamos con productos hipoalergénicos dermatológicamente testeados.",
+      "whatsapp_mensaje": "Hola Unity, deseo agendar una cita para Salón y Tratamiento Facial.",
+      "servicios": [
+        {
+          "id": "bel-1",
+          "nombre": "TRATAMIENTO FACIAL",
+          "descripcion": "Hidratación y cuidado para tu rostro. Ideal para refrescar la piel y lucir un cutis limpio.",
+          "duracion": "50 min",
+          "precio_label": "Precio",
+          "precio": "S/ 30",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bel-2",
+          "nombre": "LIMPIEZA FACIAL PROFUNDA",
+          "descripcion": "Elimina impurezas con vapor y con mascarillas para renovar tu rostro.",
+          "duracion": "60 min",
+          "precio_label": "Precio",
+          "precio": "S/ 35",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bel-3",
+          "nombre": "Maquillaje",
+          "descripcion": "Preparación de piel y técnicas de contorno de alta durabilidad.",
+          "duracion": "45 - 60 min",
+          "precio_label": "precio entre",
+          "precio": "S/ 30 a S/ 50",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bel-4",
+          "nombre": "DEPILACIÓN CON HILO, PINZA o NAVAJA",
+          "descripcion": "Diseño y perfilado facial adaptado a tus facciones mediante técnicas de hilo orgánico, pinza de precisión o navaja.",
+          "duracion": "20 min",
+          "precio_label": "Precio",
+          "precio": "S/ 10",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "bel-5",
+          "nombre": "KIT DE CEJAS (TODO)",
+          "descripcion": "Perfilado total, pigmentación y definición para dejar tus cejas perfectas y bien marcadas.",
+          "duracion": "20 min",
+          "precio_label": "Precio",
+          "precio": "S/ 10",
+          "destacado": false,
+          "nota_adicional": ""
+        }
+      ]
+    },
+    {
+      "id": "unias",
+      "titulo": "Diseño de Uñas",
+      "titulo_modal": "Diseño de Uñas & Spa",
+      "descripcion": "Esmaltado semipermanente, uñas acrílicas, baño de gel y pedicure spa regenerativo.",
+      "tags": [
+        "Semipermanente",
+        "Acrílicas",
+        "Pedicure"
+      ],
+      "imagen_fondo": "img/unas-fondo-3.webp",
+      "modal_id": "modal-unias",
+      "badge_icono": "bi-hand-index-thumb",
+      "badge_texto": "Manicure & Pedicure",
+      "modal_subtexto": "Cuidado estético, esculpido y nail art personalizado para manos y pies:",
+      "aviso_especifico": "*Diseños especiales de Nail Art o pedrería se cotizan según complejidad.",
+      "whatsapp_mensaje": "Hola Unity, deseo agendar una cita para Diseño de Uñas o Pedicure.",
+      "servicios": [
+        {
+          "id": "una-1",
+          "nombre": "DISEÑO DE UÑAS A COLOR CON DISEÑO",
+          "descripcion": "Combinación de esmaltado en gel de alta pigmentación con decoraciones personalizadas.",
+          "duracion": "45 min",
+          "precio_label": "A partir de",
+          "precio": "S/ 25",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "una-2",
+          "nombre": "DISEÑO DE UÑAS EN GEL",
+          "descripcion": "Refuerzo protector sobre tu uña natural para evitar quiebres y permitir su crecimiento.",
+          "duracion": "50 min",
+          "precio_label": "Precio",
+          "precio": "S/ 40",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "una-3",
+          "nombre": "DISEÑO DE UÑAS ACRÍLICAS",
+          "descripcion": "Esculpidas a mano con técnicas de vanguardia. Máxima resistencia, brillo impecable y acabados personalizados.",
+          "duracion": "2 horas",
+          "precio_label": "Precio",
+          "precio": "S/ 45",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "una-4",
+          "nombre": "DISEÑO DE UÑAS OJO DE GATO",
+          "descripcion": "Esculpidas a mano con técnicas de vanguardia. Máxima resistencia, brillo impecable y acabados personalizados.",
+          "duracion": "2 horas",
+          "precio_label": "A partir de",
+          "precio": "S/ 25",
+          "destacado": false,
+          "nota_adicional": ""
+        },
+        {
+          "id": "una-5",
+          "nombre": "Pedicure",
+          "descripcion": "Exfoliación con sales, retiro de asperezas, masaje hidratante y esmaltado completo.",
+          "duracion": "60 min",
+          "precio_label": "Precio",
+          "precio": "S/ 40",
+          "destacado": false,
+          "nota_adicional": ""
+        }
+      ]
+    }
+  ],
+  "mensajes": {
+    "promociones": "Las promociones y combos no son acumulables con otros descuentos y están sujetos a cambios sin previo aviso.",
+    "reserva": "Se recomienda reservar con anticipación para asegurar disponibilidad de horarios. Las reservas se confirman vía WhatsApp o llamada telefónica.",
+    "general": "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados en nuestro menú son precios base referenciales. Debido a que cada procedimiento es personalizado, el costo definitivo se determinará mediante un diagnóstico previo en el local. Le solicitamos cordialmente validar y llegar a un acuerdo sobre el presupuesto final con su estilista o especialista asignado antes de iniciar cualquier servicio. Agradecemos su comprensión."
+  }
+}

@@ -168,17 +168,17 @@ if (copyright) {
 // 🎯 MODAL EVENTOS (STORIES STYLE)
 // ==========================================
 
-// Array de imágenes del evento — agregar/quitar según existan en /public/img/
+// Array de imágenes del evento — agregar/quitar según existan en img/
 const EVENTO_SLIDES = [
     //Formato: { src: 'ruta/imagen.webp', orientacion: 'vertical' | 'horizontal' }
   // Agregar más según corresponda
-  { src: '/public/img/promo-catalogo-01.webp', orientacion: 'vertical' },
-  { src: '/public/img/evento-v-02.webp', orientacion: 'vertical' },
-  { src: '/public/img/evento-v-03.webp', orientacion: 'vertical' },
-  //{ src: '/public/img/evento-h-03.webp', orientacion: 'horizontal' },
-  { src: '/public/img/evento-v-04.webp', orientacion: 'vertical' },
-  //{ src: '/public/img/evento-h-04.webp', orientacion: 'horizontal' }
-  { src: '/public/img/evento-v-05.webp', orientacion: 'vertical' },
+  { src: 'img/promo-catalogo-01.webp', orientacion: 'vertical' },
+  { src: 'img/evento-v-02.webp', orientacion: 'vertical' },
+  { src: 'img/evento-v-03.webp', orientacion: 'vertical' },
+  //{ src: 'img/evento-h-03.webp', orientacion: 'horizontal' },
+  { src: 'img/evento-v-04.webp', orientacion: 'vertical' },
+  //{ src: 'img/evento-h-04.webp', orientacion: 'horizontal' }
+  { src: 'img/evento-v-05.webp', orientacion: 'vertical' },
 ];
 
 const SLIDE_DURACION = 5000; // ms por slide (ritmo suave, ajustable)
