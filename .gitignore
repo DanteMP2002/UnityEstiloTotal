@@ -18,3 +18,5 @@ prueba.css
 .continue
 .php_tmp/
 .cursor/
+# ignorar archivos de análisis
+ANALISIS.md

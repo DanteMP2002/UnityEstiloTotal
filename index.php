@@ -4,7 +4,8 @@ $mensajePromociones = "Las promociones y combos no son acumulables con otros des
 $mensajeReserva = "Se recomienda reservar con anticipación para asegurar disponibilidad de horarios. Las reservas se confirman vía WhatsApp o llamada telefónica.";
 $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados en nuestro menú son precios base referenciales. Debido a que cada procedimiento es personalizado, el costo definitivo se determinará mediante un diagnóstico previo en el local. Le solicitamos cordialmente validar y llegar a un acuerdo sobre el presupuesto final con su estilista o especialista asignado antes de iniciar cualquier servicio. Agradecemos su comprensión.";
 // SVG optimizado con tamaño adaptable (1em)
-
+$v_css = filemtime($_SERVER['DOCUMENT_ROOT'] . '/public/css/estilo.css');
+$v_js = filemtime($_SERVER['DOCUMENT_ROOT'] . '/public/js/main.js');
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +13,10 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNITY| INICIO</title>
+    <title>UNITY | INICIO</title>
     <link rel="icon" href="/public/img/logo.webp" type="image/x-icon">
-    <link rel="preload" as="image" href="/public/img/hero1.webp" fetchpriority="high">
-    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="preload" as="image" href="/public/img/hero-2.webp" fetchpriority="high">
+    <link rel="stylesheet" href="/public/css/estilo.css?v=<?= $v_css ?>">
     <!-- Fuentes: Playfair Display para titulos elegantes, Inter para texto limpio -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -810,6 +811,6 @@ $mensajeGeneral = "CONDICIONES GENERALES DE TARIFAS: Todos los precios mostrados
     
 <!-- Script principal: hamburguesa, scroll, animaciones -->    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="/public/js/main.js"></script>
+    <script src="/public/js/main.js?v=<?= $v_js ?>"></script>
 </body>
 </html>
